@@ -57,10 +57,10 @@ export const AlcoholPolicyOverlay: React.FC<Props> = ({ isOpen, onClose }) => {
                             {/* Image Container - Vertical 9:16 Aspect Ratio */}
                             <div className="relative bg-black aspect-[9/16] overflow-hidden group">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end justify-center pb-8">
-                                    <p className="text-[#FFD700] font-serif italic text-lg px-4 text-center">"Stefan's Steakhouse: Lopputulos."</p>
+                                    <p className="text-[#FFD700] font-serif italic text-lg px-4 text-center">"Kyllä"</p>
                                 </div>
                                 <img
-                                    src="./IMG_2840.webp"
+                                    src="/IMG_2840.webp"
                                     alt="Sleeping after dinner at Stefans Steakhouse"
                                     className="w-full h-full object-cover sepia-[0.3] contrast-125 brightness-75 group-hover:sepia-0 group-hover:brightness-100 transition-all duration-1000"
                                 />
