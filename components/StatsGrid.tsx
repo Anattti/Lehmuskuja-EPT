@@ -125,7 +125,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
                     <span className="text-[9px] sm:text-[10px] text-gray-500">Max 100/väri</span>
                 </div>
 
-                <div className="flex justify-between items-end h-8 gap-1 mb-3">
+                <div className="flex justify-between items-end h-8 gap-1 mb-6">
                     {CHIP_CONFIGS.map((chip, index) => {
                         const neededPerPlayer = currentDistribution[index];
                         const neededTotal = neededPerPlayer * playerCount;
@@ -145,10 +145,10 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
                                 </div>
 
                                 {/* Indicator Dot */}
-                                <div className={`w-2 h-2 rounded-full ${chip.colorClass} shadow-sm border border-black/20`}></div>
+                                <div className={`w-5 h-5 rounded-full ${chip.colorClass} shadow-sm border border-black/20`}></div>
 
                                 {/* Number Display */}
-                                <span className={`absolute top-full mt-1 text-[10px] sm:text-[12px] font-mono font-bold ${isCritical ? 'text-red-500' : 'text-gray-500'}`}>
+                                <span className={`absolute top-full mt-1 text-[15px] sm:text-[12px] font-mono font-bold ${isCritical ? 'text-red-500' : 'text-gray-500'}`}>
                                     {remaining}
                                 </span>
                             </div>
