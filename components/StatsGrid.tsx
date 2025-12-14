@@ -69,7 +69,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
     const currentDistribution = STACK_DISTRIBUTIONS[startingStack] || STACK_DISTRIBUTIONS[10000];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full max-w-7xl px-3 sm:px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full max-w-7xl px-3 sm:px-4">
 
             {/* Stack Card - Clickable */}
             <button
@@ -88,14 +88,31 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
                 </div>
             </button>
 
+            {/* Levels Card - Clickable - Moved up to be next to Stack on mobile */}
+            <button
+                onClick={toggleDuration}
+                className="bg-[#1b2b22]/50 border border-border-green/50 backdrop-blur-sm p-4 sm:p-5 rounded-2xl flex items-center gap-3 sm:gap-4 hover:bg-[#1b2b22] hover:border-brand-red/50 transition-all group cursor-pointer text-left relative"
+            >
+                <div className="absolute top-2 right-3 text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Vaihda
+                </div>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform bg-brand-red/20 text-brand-red shrink-0">
+                    <span className="material-symbols-outlined text-[20px] sm:text-[24px]">timer</span>
+                </div>
+                <div>
+                    <p className="text-[10px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Tasot</p>
+                    <p className="text-white font-bold text-base sm:text-lg tabular-nums">{blindDuration} Minuuttia</p>
+                </div>
+            </button>
+
             {/* Players Card - Interactive */}
-            <div className="bg-[#1b2b22]/50 border border-border-green/50 backdrop-blur-sm p-4 sm:p-5 rounded-2xl flex items-center gap-3 sm:gap-4 hover:bg-[#1b2b22] transition-colors group select-none relative overflow-hidden">
+            <div className="col-span-2 sm:col-span-1 bg-[#1b2b22]/50 border border-border-green/50 backdrop-blur-sm p-4 sm:p-5 rounded-2xl flex items-center gap-3 sm:gap-4 hover:bg-[#1b2b22] transition-colors group select-none relative overflow-hidden">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform bg-primary/20 text-primary shrink-0">
                     <span className="material-symbols-outlined text-[20px] sm:text-[24px]">groups</span>
                 </div>
                 <div className="flex-grow">
                     <p className="text-[10px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Pelaajia</p>
-                    <div className="flex items-center gap-2 sm:gap-3 mt-1 sm:mt-0">
+                    <div className="flex items-center  gap-2 sm:gap-3 mt-1 sm:mt-0">
                         <button
                             onClick={handleDecrement}
                             className="w-6 h-6 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors disabled:opacity-30"
@@ -116,7 +133,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
             </div>
 
             {/* Chip Inventory Card */}
-            <div className="bg-[#1b2b22]/50 border border-border-green/50 backdrop-blur-sm p-4 sm:p-5 rounded-2xl flex flex-col justify-center gap-2 hover:bg-[#1b2b22] transition-colors group cursor-default">
+            <div className="col-span-2 sm:col-span-1 bg-[#1b2b22]/50 border border-border-green/50 backdrop-blur-sm p-4 sm:p-5 rounded-2xl flex flex-col justify-center gap-2 hover:bg-[#1b2b22] transition-colors group cursor-default">
                 <div className="flex items-center justify-between mb-1">
                     <p className="text-[10px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider flex items-center gap-1">
                         <span className="material-symbols-outlined text-xs sm:text-sm">inventory_2</span>
@@ -162,23 +179,6 @@ export const StatsGrid: React.FC<StatsGridProps> = ({
                     </p>
                 )}
             </div>
-
-            {/* Levels Card - Clickable */}
-            <button
-                onClick={toggleDuration}
-                className="bg-[#1b2b22]/50 border border-border-green/50 backdrop-blur-sm p-4 sm:p-5 rounded-2xl flex items-center gap-3 sm:gap-4 hover:bg-[#1b2b22] hover:border-brand-red/50 transition-all group cursor-pointer text-left relative"
-            >
-                <div className="absolute top-2 right-3 text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Vaihda
-                </div>
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform bg-brand-red/20 text-brand-red shrink-0">
-                    <span className="material-symbols-outlined text-[20px] sm:text-[24px]">timer</span>
-                </div>
-                <div>
-                    <p className="text-[10px] sm:text-xs text-gray-400 uppercase font-semibold tracking-wider">Tasot</p>
-                    <p className="text-white font-bold text-base sm:text-lg tabular-nums">{blindDuration} Minuuttia</p>
-                </div>
-            </button>
 
         </div>
     );
