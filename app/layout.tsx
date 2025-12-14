@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
     title: 'LEHMUSKUJA EPT',
@@ -63,6 +64,7 @@ export default function RootLayout({
                 }} />
             </head>
             <body className="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col antialiased selection:bg-primary selection:text-background-dark overflow-x-hidden">
+                <Analytics />
                 <Header />
                 <main className="flex-grow flex flex-col relative pb-12">
                     {/* Abstract Background Elements */}
