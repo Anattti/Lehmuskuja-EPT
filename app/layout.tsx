@@ -6,6 +6,10 @@ import { Analytics } from '@vercel/analytics/react';
 export const metadata = {
     title: 'LEHMUSKUJA EPT',
     description: 'A dark-themed poker tournament landing page featuring tournament structure, schedule, and details.',
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 export default function RootLayout({

@@ -368,6 +368,7 @@ export const TournamentInfo: React.FC<TournamentInfoProps> = ({ playerCount, bli
                         {[
                             "Pelaa standardi NLHE-säännöillä (No-Limit Texas Hold'em).",
                             "Vilunkipelaaminen, puhelinhäirintä ja merkkien manipulointi kielletty.",
+                            "Röökin poltto rajattu VAIN saunanlauteille.",
                             "Turnausjohtajan päätös on lopullinen ristiriitatilanteissa.",
                             "Merkit eivät vastaa rahaa – ei vaihtoarvoa turnauksen ulkopuolella.",
                             "Eemeli-special mahdollinen",
